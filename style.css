@@ -1,0 +1,443 @@
+/*
+ * Theme Name:     Sakura Child
+ * Theme URI:      http: //defectink.com/
+ * Description:    Child theme for the Sakura theme 
+ * Author:         Defectink
+ * Author URI:     http: //defectink.com/about/
+ * Template:       Sakura
+ * Version:        0.1.0
+ * */
+@import url("../Sakura/style.css");
+/*图文风格放大动画*/
+.post-list-thumb {
+	transition: all 0.4s ease;
+	-webkil-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	height: 438.75px;
+}
+.post-list-thumb:hover {
+    box-shadow: 8px 7px 20px 0px rgba(0, 0, 0, .5);
+	 transform: scale(1.05);
+	transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+}
+/*Ah,Defectink*/
+/*抖动*/
+@keyframes shake-it{
+    0%{
+        text-shadow: 0 0 rgba(0, 255, 255, .5), 0 0 rgba(255, 0, 0, .5);
+    }
+    25%{
+        text-shadow: -2px 0 rgba(0, 255, 255, .5), 2px 0 rgba(255, 0, 0, .5);
+    }
+    50%{
+        text-shadow: -5px 0 rgba(0, 255, 255, .5), 3px 0 rgba(255, 0, 0, .5);
+    }
+    100%{
+        text-shadow: 3px 0 rgba(0, 255, 255, .5), 5px 0 rgba(255, 0, 0, .5);
+    }
+}
+/*引入字体*/
+@font-face{
+	font-family:AxureHandwriting;
+	src:url('https://cdn.defectink.com/font/AxureHandwriting.otf');
+}
+@font-face{
+	font-family:yayuan;
+	src:url('https://cdn.defectink.com/font/yayuan.otf');
+}
+@font-face{
+	font-family:ccyayuan;
+	src:url('https://cdn.defectink.com/font/yayuan.woff');
+}
+.Defectink {
+    height:135px;
+}
+.Defectink h1 {
+    font-size:90px;
+    margin: auto;
+    text-shadow: 1px 1px 0 #ff3f1a, -1px -1px 0 #00a7e0;
+    font-family: AxureHandwriting!important;
+    position: relative;
+    color: white;
+}
+.Defectink h1:hover {
+	animation: shake-it .5s reverse infinite cubic-bezier(0.68,-.55,.27,1.55);
+	-webkit-animation: shake-it .5s reverse infinite cubic-bezier(0.68,-.55,.27,1.55);
+}
+/* 和泉纱雾的动画 */
+#paul{
+    left: 0;
+    bottom: 0;
+    z-index: 10; /* 如果模型被遮住可以把它改的更大 */
+    position: fixed;
+    pointer-events: none; /* 防止遮住鼠标点击页面其他内容 */
+}
+/*文章h1阴影*/
+.entry-title {
+	transition: all 0.6s; 
+	-webkit-transition: all 0.6s; 
+	text-shadow: 6px 6px 10px #989898;;
+   color: #989898;
+}
+.entry-title:hover {
+   	transition: all 0.6s; 
+	-webkit-transition: all 0.6s;
+	text-shadow: 0px 0px 0px black;
+}
+/*评论框圆角以及背景*/
+.comment-respond textarea {
+    background-image: url(https://cdn.defectink.com/images/comment-bg.png);
+}
+.comment-respond textarea {
+    background-image: url(https://cdn.defectink.com/images/comment-bg.png);
+    border-radius: 15px;
+}
+.comment-respond input:last-of-type {
+    margin-right: 0;
+    border-radius: 15px;
+}
+.comment-respond input[type=submit] {
+    border-radius: 13px;
+}
+.insert-image-tips {
+    border-radius: 12px;
+}
+/*表情文字动态*/
+#emotion-toggle:hover {
+    animation: shake-it .5s reverse infinite cubic-bezier(0.68,-.55,.27,1.55);
+	 -webkit-animation: shake-it .5s reverse infinite cubic-bezier(0.68,-.55,.27,1.55);
+}
+/*页脚旋转*/
+.foot-logo {
+    width: 30px;
+    height: 30px;
+    opacity: .3;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    animation: poi-deg 12s infinite linear;
+    -webkit-animation: poi-deg 12s infinite linear;
+}
+/*签名三角位置*/
+.header-info:before {
+    margin-left: 200px;
+    top:127px;
+}
+/*post圆角*/
+.post-squares {
+    border-radius: 16px;
+}
+/*全局字体*/
+.serif {
+    font-family: ccyayuan,miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
+}
+p {
+	font-size:16px;
+}
+/*作者头像边框处理*/
+.author-profile .profile img {
+    border: 0px solid #ddd;
+}
+    /*ol使用css排序进行定义序号*/
+.entry-content ol {
+	counter-reset: xxx 0 !important;
+}
+
+.entry-content ol li:before {
+	content: counter(xxx,decimal) "." !important;
+	counter-increment: xxx 1 !important;
+	position: absolute;
+	font-family: 'Comic Sans MS','Open Sans','Microsoft Yahei','Microsoft Yahei',-apple-system,sans-serif !important;
+	color: #000;
+	top: 0;
+	left: 0;
+	text-align: center;
+	font-size: 1.2em;
+	opacity: .5;
+	line-height: 1;
+	text-shadow: 4px 4px 1px rgba(0,0,0,.1);
+	-webkit-transition: .5s;
+	transition: .5s
+}
+
+.entry-content ol li:hover:before {
+	-webkit-transform: scale(2);
+	-ms-transform: scale(2);
+	transform: scale(2);
+	opacity: 1;
+	text-shadow: 2px 2px 1px rgba(0,0,0,.1);
+	-webkit-transition: .1s;
+	transition: .1s
+}
+
+.entry-content ol li {
+	list-style: none;
+	position: relative;
+	padding: 0 0 0 2.1em;
+	margin: 0 0 0 10px;
+	text-shadow: 0px 0px 0px rgba(0,0,0,.1);
+	-webkit-transition: .12s;
+	transition: .12s;
+}
+    /*ul使用插入圆点来模拟无序列表*/
+.entry-content ul li:before {
+	position: absolute;
+	content: '\2022';
+	font-family: Arial;
+	color: #000;
+	top: 0;
+	left: 0;
+	text-align: center;
+	font-size: 1.7em;
+	opacity: .5;
+	line-height: 1;
+	text-shadow: 4px 4px 1px rgba(0,0,0,.1);
+	-webkit-transition: .5s;
+	transition: .5s
+}
+
+.entry-content ul li:hover:before {
+	-webkit-transform: scale(2);
+	-ms-transform: scale(2);
+	transform: scale(2);
+	opacity: 1;
+	text-shadow: 2px 2px 1px rgba(0,0,0,.1);
+	-webkit-transition: .1s;
+	transition: .1s
+}
+
+.entry-content ul li {
+	list-style: none;
+	position: relative;
+	padding: 0 0 0 1.5em;
+	margin: 0 0 0 10px;
+	text-shadow: 0px 0px 0px rgba(0,0,0,.1);
+	-webkit-transition: .12s;
+	transition: .12s;
+}
+/* 各个li的动态阴影 */
+.entry-content li:hover {
+	text-shadow: 3px 3px 2px #2f2f2f57;
+}
+/*各个h标题以及段落的阴影动画*/
+h2:hover {
+    text-shadow: 3px 3px 2px #2f2f2f57;
+	  transition: all 0.6s; 
+	-webkit-transition: all 0.6s; 
+}
+h2 {
+	  transition: all 0.6s; 
+	-webkit-transition: all 0.6s; 
+}
+h3:hover {
+    text-shadow: 3px 3px 2px #2f2f2f57;
+	  transition: all 0.6s; 
+	-webkit-transition: all 0.6s; 
+}
+h3 {
+	  transition: all 0.6s; 
+	-webkit-transition: all 0.6s; 
+}
+h4:hover {
+    text-shadow: 3px 3px 2px #2f2f2f57;
+	  transition: all 0.6s; 
+	-webkit-transition: all 0.6s; 
+}
+h4 {
+	  transition: all 0.6s; 
+	-webkit-transition: all 0.6s; 
+}
+h5:hover {
+    text-shadow: 3px 3px 2px #2f2f2f57;
+	  transition: all 0.6s; 
+	-webkit-transition: all 0.6s; 
+}
+h5 {
+	  transition: all 0.6s; 
+	-webkit-transition: all 0.6s; 
+}
+h6:hover {
+    text-shadow: 3px 3px 2px #2f2f2f57;
+	  transition: all 0.6s; 
+	-webkit-transition: all 0.6s; 
+}
+h6 {
+	  transition: all 0.6s; 
+	-webkit-transition: all 0.6s; 
+}
+p:hover {
+    text-shadow: 3px 3px 2px #2f2f2f57;
+	  transition: all 0.6s; 
+	-webkit-transition: all 0.6s; 
+}
+p {
+	  transition: all 0.6s; 
+	-webkit-transition: all 0.6s; 
+}
+/*代码框的阴影动画*/
+.highlight-wrap:hover {
+    box-shadow: 4px 8px 15px 0px rgba(0, 0, 0, 0.67);
+	  transition: all 0.3s; 
+	-webkit-transition: all 0.3s; 
+}
+.highlight-wrap {
+	  transition: all 0.3s; 
+	-webkit-transition: all 0.3s; 
+}
+/*评论头像框旋转*/
+.comment .profile img:hover {
+    transform: rotate(360deg);
+	 transition: all 0.7s ease-out;
+	-webkit-transform: rotate(360deg);
+	 -webkit-transition: all 0.7s ease-out;
+}
+.comment .profile img {
+    transform: rotate(0deg);
+	 transition: all 0.7s ease-out;
+	-webkit-transform: rotate(0deg);
+	 -webkit-transition: all 0.7s ease-out;
+}
+/*左上角logo动画*/
+.site-title {
+    width: 150px;
+    height: 65px;
+}
+.title-img {
+    height: 74px;
+    background: url(http://192.168.50.120/wp-content/uploads/2018/12/wzlogo.png) no-repeat center;
+	transition: all 0.7s;
+	-webkit-transition: all 0.7s;
+	background-size: contain;
+}
+.title-img:hover {
+    height: 74px;
+    background: url(http://192.168.50.120/wp-content/uploads/2018/12/wzlogohover.png) no-repeat center;
+	transition: all 0.7s;
+	-webkit-transition: all 0.7s;
+	background-size: contain;
+	 
+}
+/*友链标题阴影*/
+span.linkss-title {
+    color: #989898;
+	  font-weight: 300;
+    text-shadow: 6px 6px 10px #989898;
+   	transition: all 0.6s;
+    -webkit-transition: all 0.6s;
+}
+span.linkss-title:hover {
+    transition: all 0.6s;
+    -webkit-transition: all 0.6s;
+    text-shadow: 0px 0px 0px black;
+}
+/*归档页面标题阴影*/
+h1.cat-title {
+    color: #989898;
+	  font-weight: 300;
+    text-shadow: 6px 6px 10px #989898;
+   	transition: all 0.6s;
+    -webkit-transition: all 0.6s;
+}
+h1.cat-title:hover {
+    transition: all 0.6s;
+    -webkit-transition: all 0.6s;
+    text-shadow: 0px 0px 0px black;
+}
+
+/*
+ * 卡片风格
+ */
+.post-content-wraps h3 {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+    color: #eee;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 1.5;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.post.post-list-thumb {
+    position: relative;
+    margin-bottom: 28px;
+    overflow: hidden;
+    border-radius: 13px;
+	 margin: 15px 0 15px;
+}
+.post-content-wraps {
+    position: absolute;
+    bottom: 0;
+    padding: 0 8px 8px;
+    width: 100%;
+    color: #eee;
+}
+.post-content {
+    /* border: 1px solid #ccc; */
+    padding: 4px 10px;
+    border-radius: 13px;
+    background: rgba(0, 0, 0, .7);
+}
+.float-contents p {
+    margin: 0;
+}
+.float-contents {
+    margin: 4px 0;
+    height: 44px;
+}
+.post-meta {
+    color: #eee;
+}
+.post-list-thumb i {
+    margin-right: 3px;
+    font-size: 14px;
+}
+.post-date,
+.post-meta,
+.post-meta a {
+    color: #eee;
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+.comment-number {
+    margin: 0 10px;
+}
+.float-contents i {
+    color: #666;
+    font-size: 25px;
+}
+.post.post-list-thumb .post-thumb {
+    -webkit-transition: -webkit-transform .5s ease-out;
+    -webkit-transition: transform .5s ease-out;
+    transition: transform .5s ease-out;
+}
+.post.post-list-thumb:hover .post-thumb {
+    -webkit-transform: scale(1.07);
+    transform: scale(1.07);
+    -ms-transform: scale(1.07);
+}
+.post-thumb {
+    overflow: hidden;
+    border-radius: 13px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-origin: border-box;
+	width: 100%;
+}
+.post-thumb a {
+    display: block;
+	height: 438.75px;
+}
+.post-thumb a::after {
+    content: "";
+    display: block;
+    padding-bottom: 56.25%;
+}
+.post-date {
+    float: right;
+}
