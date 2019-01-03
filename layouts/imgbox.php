@@ -9,7 +9,7 @@
 //https://api.mashiro.top/cover
 
 ?><!--centerbg -->
-<figure id="centerbg" class="nobg">
+<figure id="centerbg" class="centerbg">
 <?php if ( !akina_option('focus_infos') ){ ?>
 	<div class="focusinfo">
 		<!--AH,Defectink-->

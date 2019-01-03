@@ -441,3 +441,7 @@ h1.cat-title:hover {
 .post-date {
     float: right;
 }
+
+#centerbg {
+    background-attachment: scroll;
+}

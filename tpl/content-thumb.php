@@ -16,7 +16,7 @@ if(has_post_thumbnail()){
 	$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
 	$post_img = $large_image_url[0];
 }else{
-	$post_img = "https://api.ixiaowai.cn/api/api.php";
+	$post_img = "https://cdn.defectink.com/images/824467.jpg";
 }
 $the_cat = get_the_category();
 // 摘要字数限制
