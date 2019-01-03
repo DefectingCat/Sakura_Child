@@ -307,14 +307,14 @@ p {
 }
 .title-img {
     height: 74px;
-    background: url(http://192.168.50.120/wp-content/uploads/2018/12/wzlogo.png) no-repeat center;
+    background: url(https://cdn.defectink.com/images/wzlogo.png) no-repeat center;
 	transition: all 0.7s;
 	-webkit-transition: all 0.7s;
 	background-size: contain;
 }
 .title-img:hover {
     height: 74px;
-    background: url(http://192.168.50.120/wp-content/uploads/2018/12/wzlogohover.png) no-repeat center;
+    background: url(https://cdn.defectink.com/images/wzlogohover.png) no-repeat center;
 	transition: all 0.7s;
 	-webkit-transition: all 0.7s;
 	background-size: contain;

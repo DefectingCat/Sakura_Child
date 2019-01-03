@@ -169,6 +169,7 @@ typing(document.getElementById('typing'));
 <script type="text/javascript"><?php echo akina_option('site_statistics'); ?></script>
 </div>
 <?php } ?>
+<!--
 <div class="changeSkin-gear no-select">
     <div class="keys">
         <span id="open-skinMenu">
@@ -176,6 +177,7 @@ typing(document.getElementById('typing'));
         </span>
     </div>
 </div>
+-->
 <div class="skin-menu no-select">
     <div class="theme-controls row-container">
         <ul class="menu-list">
