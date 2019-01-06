@@ -70,15 +70,15 @@ if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
   alert('请抛弃万恶的IE系浏览器吧~');
 }
 </script>
-<!-- Global site tag (gtag.js) - Google Analytics
-<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo akina_option('google_analytics_id', ''); ?>"></script> -->
-<script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','<?php echo akina_option('google_analytics_id', ''); ?>');
-</script>
 <!-- 页面加载计时 -->
-<script language=javascript> 
+<script type="text/javascript"> 
 var t1 = new Date().getTime(); 
 </script> 
+<!-- Global site tag (gtag.js) - Google Analytics
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo akina_option('google_analytics_id', ''); ?>"></script> -->
+<!-- <script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','<?php echo akina_option('google_analytics_id', ''); ?>');
+</script> -->
 </head>
 <body <?php body_class(); ?>>
     <div class="scrollbar" id="bar"></div>
