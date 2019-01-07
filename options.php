@@ -114,7 +114,7 @@ function optionsframework_options() {
 	
 	$options[] = array(
 		'name' => __('站点名称', 'options_framework_theme'),
-		'desc' => __('樱花庄的白猫', 'options_framework_theme'),
+		'desc' => __('樱花庄的小肥羊', 'options_framework_theme'),
 		'id' => 'site_name',
 		'std' => '',
 		'type' => 'text');	
@@ -286,6 +286,16 @@ function optionsframework_options() {
 		'id' => 'site_custom_style',
 		'std' => '',
 		'type' => 'textarea');		
+	
+		$options[] = array(
+			'name' => __('说说心情', 'akina'),
+			'id' => 'shuoshuo',
+			'std' => "no",
+			'type' => "radio",
+			'options' => array(
+				'yes' => __('开启', ''),
+				'no' => __('关闭', '')
+			));
 
 		
 	//第一屏
