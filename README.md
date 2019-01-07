@@ -31,3 +31,10 @@
 
 ## 更多
 →[可能这次是真的改头换面了吧🍭](https://www.defectink.com/defect/290.html)
+
+## Update
+* 19/1/7
+
+扒自后宫学长的“说说”页面 →[说说](https://haremu.com/shuo/)
+
+子主题functions.php引入if语句不成功，导致后台说说开关设置无法使用。
