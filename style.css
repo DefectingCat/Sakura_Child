@@ -18,12 +18,9 @@
 .post-list-thumb:hover {
     box-shadow: 8px 7px 20px 0px rgba(0, 0, 0, .5);
 	 /*transform: scale(1.05);*/
-	transition: all 0.4s ease;
-	-webkit-transition: all 0.4s ease;
-	-ms-transition: all 0.4s ease;
 }
 /*Ah,Defectink*/
-/*抖动*/
+/*抖动动画*/
 @keyframes shake-it{
     0%{
         text-shadow: 0 0 rgba(0, 255, 255, .5), 0 0 rgba(255, 0, 0, .5);
@@ -36,6 +33,15 @@
     }
     100%{
         text-shadow: 3px 0 rgba(0, 255, 255, .5), 5px 0 rgba(255, 0, 0, .5);
+    }
+}
+/*说说页面h3渐变动画*/
+@-webkit-keyframes hue {
+    from {
+        -webkit-filter: hue-rotate(0deg);
+    }
+    to {
+        -webkit-filter: hue-rotate(-360deg);
     }
 }
 /*引入字体*/
@@ -82,8 +88,6 @@
    color: #989898;
 }
 .entry-title:hover {
-   	transition: all 0.6s; 
-	-webkit-transition: all 0.6s;
 	text-shadow: 0px 0px 0px black;
 }
 /*评论框圆角以及背景*/
@@ -169,8 +173,6 @@ p {
 	transform: scale(2);
 	opacity: 1;
 	text-shadow: 2px 2px 1px rgba(0,0,0,.1);
-	-webkit-transition: .1s;
-	transition: .1s
 }
 
 .entry-content ol li {
@@ -225,8 +227,6 @@ p {
 /*各个h标题以及段落的阴影动画*/
 h2:hover {
     text-shadow: 3px 3px 2px #2f2f2f57;
-	  transition: all 0.6s; 
-	-webkit-transition: all 0.6s; 
 }
 h2 {
 	  transition: all 0.6s; 
@@ -234,8 +234,6 @@ h2 {
 }
 h3:hover {
     text-shadow: 3px 3px 2px #2f2f2f57;
-	  transition: all 0.6s; 
-	-webkit-transition: all 0.6s; 
 }
 h3 {
 	  transition: all 0.6s; 
@@ -243,8 +241,6 @@ h3 {
 }
 h4:hover {
     text-shadow: 3px 3px 2px #2f2f2f57;
-	  transition: all 0.6s; 
-	-webkit-transition: all 0.6s; 
 }
 h4 {
 	  transition: all 0.6s; 
@@ -252,8 +248,6 @@ h4 {
 }
 h5:hover {
     text-shadow: 3px 3px 2px #2f2f2f57;
-	  transition: all 0.6s; 
-	-webkit-transition: all 0.6s; 
 }
 h5 {
 	  transition: all 0.6s; 
@@ -261,8 +255,6 @@ h5 {
 }
 h6:hover {
     text-shadow: 3px 3px 2px #2f2f2f57;
-	  transition: all 0.6s; 
-	-webkit-transition: all 0.6s; 
 }
 h6 {
 	  transition: all 0.6s; 
@@ -270,8 +262,6 @@ h6 {
 }
 p:hover {
     text-shadow: 3px 3px 2px #2f2f2f57;
-	  transition: all 0.6s; 
-	-webkit-transition: all 0.6s; 
 }
 p {
 	  transition: all 0.6s; 
@@ -280,8 +270,6 @@ p {
 /*代码框的阴影动画*/
 .highlight-wrap:hover {
     box-shadow: 4px 8px 15px 0px rgba(0, 0, 0, 0.67);
-	  transition: all 0.3s; 
-	-webkit-transition: all 0.3s; 
 }
 .highlight-wrap {
 	  transition: all 0.3s; 
@@ -289,16 +277,14 @@ p {
 }
 /*评论头像框旋转*/
 .comment .profile img:hover {
-    transform: rotate(360deg);
-	 transition: all 0.7s ease-out;
-	-webkit-transform: rotate(360deg);
-	 -webkit-transition: all 0.7s ease-out;
+    transform: rotate(40deg);
+	-webkit-transform: rotate(40deg);
 }
 .comment .profile img {
     transform: rotate(0deg);
-	 transition: all 0.7s ease-out;
+	 transition: all 0.5s ease-out;
 	-webkit-transform: rotate(0deg);
-	 -webkit-transition: all 0.7s ease-out;
+	 -webkit-transition: all 0.5s ease-out;
 }
 /*左上角logo动画*/
 .site-title {
@@ -315,8 +301,6 @@ p {
 .title-img:hover {
     height: 74px;
     background: url(https://cdn.defectink.com/images/wzlogohover.png) no-repeat center;
-	transition: all 0.7s;
-	-webkit-transition: all 0.7s;
 	background-size: contain;
 	 
 }
@@ -329,8 +313,6 @@ span.linkss-title {
     -webkit-transition: all 0.6s;
 }
 span.linkss-title:hover {
-    transition: all 0.6s;
-    -webkit-transition: all 0.6s;
     text-shadow: 0px 0px 0px black;
 }
 /*归档页面标题阴影*/
@@ -342,8 +324,6 @@ h1.cat-title {
     -webkit-transition: all 0.6s;
 }
 h1.cat-title:hover {
-    transition: all 0.6s;
-    -webkit-transition: all 0.6s;
     text-shadow: 0px 0px 0px black;
 }
 
@@ -441,7 +421,7 @@ h1.cat-title:hover {
 .post-date {
     float: right;
 }
-
+/*固定第一屏背景*/
 #centerbg {
     background-attachment: scroll;
 }
@@ -477,7 +457,11 @@ h1.cat-title:hover {
     width: 30%;
     padding-right: 100px;
     position: absolute;
-
+	 transition:all 0.6s;
+	-webkit-transition:all 0.6s;
+}
+.cbp_tmtimeline > li .cbp_tmtime:hover {
+	    text-shadow: 3px 3px 2px #2f2f2f57;
 }
 
 /* Right content */
@@ -490,10 +474,11 @@ h1.cat-title:hover {
     line-height: 1.4;
     position: relative;
     border-radius: 5px;
+		transition: all 0.5s;
+	-webkit-transition: all 0.5s;
 }
-
-.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
-    background: #7878f0;
+.cbp_tmtimeline > li .cbp_tmlabel:hover {
+	box-shadow: 4px 4px 12px #206dcca8;
 }
 
 .cbp_tmtimeline > li .cbp_tmlabel h3 {
@@ -503,6 +488,12 @@ h1.cat-title:hover {
     height: 40px;
     padding: 5px 3px 12px;
     margin: 0px;
+	  color: #f35626;
+    background: coral;
+    background-image: -webkit-linear-gradient(45deg,#f35626,#feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 6s infinite linear;
 }
 
 /* The triangle */
@@ -517,10 +508,6 @@ h1.cat-title:hover {
     border-right-color: #24a0f0;
     border-width: 10px;
     top: 10px;
-}
-
-.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
-    border-right-color: #7878f0;
 }
 
 /* The icons */
@@ -545,6 +532,12 @@ h1.cat-title:hover {
     left: 20%;
     top: 0;
     margin: 0 0 0 -25px;
+	 transition: all 0.5s ease-out;
+	 -webkit-transition: all 0.5s ease-out;
+}
+.cbp_tmtimeline > li .cbp_tmicon:hover {
+	transform: rotate(40deg);
+	-webkit-transform: rotate(40deg);
 }
 
 .cbp_tmtimeline > li .cbp_tmicon > a img {
@@ -594,11 +587,13 @@ h1.cat-title:hover {
         border-right-color: transparent;
         border-bottom-color: #7878f0;
     }
+		/*box-shadow: 4px 4px 12px #206dcca8;*/
 
     .cbp_tmtimeline > li .cbp_tmicon {
         position: relative;
         float: right;
         left: auto;
         margin: -55px 5px 0 0;
+		box-shadow: 4px 4px 12px #206dcca8;
     }
 }
