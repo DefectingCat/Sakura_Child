@@ -49,10 +49,10 @@
 	font-family:AxureHandwriting;
 	src:url('https://cdn.defectink.com/font/AxureHandwriting.otf');
 }
-@font-face{
+/*@font-face{
 	font-family:yayuan;
 	src:url('https://cdn.defectink.com/font/yayuan.otf');
-}
+}*/
 @font-face{
 	font-family:ccyayuan;
 	src:url('https://cdn.defectink.com/font/yayuan.woff');
