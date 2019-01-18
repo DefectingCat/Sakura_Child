@@ -35,7 +35,7 @@
         text-shadow: 3px 0 rgba(0, 255, 255, .5), 5px 0 rgba(255, 0, 0, .5);
     }
 }
-/*说说页面h3渐变动画*/
+/*渐变动画*/
 @-webkit-keyframes hue {
     from {
         -webkit-filter: hue-rotate(0deg);
@@ -49,10 +49,10 @@
 	font-family:AxureHandwriting;
 	src:url('https://cdn.defectink.com/font/AxureHandwriting.otf');
 }
-@font-face{
+/*@font-face{
 	font-family:yayuan;
 	src:url('https://cdn.defectink.com/font/yayuan.otf');
-}
+}*/
 @font-face{
 	font-family:ccyayuan;
 	src:url('https://cdn.defectink.com/font/yayuan.woff');
@@ -476,6 +476,12 @@ h1.cat-title:hover {
     border-radius: 5px;
 		transition: all 0.5s;
 	-webkit-transition: all 0.5s;
+		  color: #f35626;
+    background: coral;
+    background-image: -webkit-linear-gradient(45deg,#f35626,#feab3a);
+    -webkit-background-clip: padding-box;
+    /*-webkit-text-fill-color: transparent;*/
+    -webkit-animation: hue 6s infinite linear;
 }
 .cbp_tmtimeline > li .cbp_tmlabel:hover {
 	box-shadow: 4px 4px 12px #206dcca8;
@@ -488,12 +494,10 @@ h1.cat-title:hover {
     height: 40px;
     padding: 5px 3px 12px;
     margin: 0px;
-	  color: #f35626;
-    background: coral;
-    background-image: -webkit-linear-gradient(45deg,#f35626,#feab3a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: hue 6s infinite linear;
+		color: aliceblue;
+}
+.cbp_tmtimeline > li .cbp_tmlabel p {
+	color: aliceblue;
 }
 
 /* The triangle */
@@ -581,6 +585,12 @@ h1.cat-title:hover {
         border-right-color: transparent;
         border-bottom-color: #24a0f0;
         top: -20px;
+				  color: #f35626;
+    background: coral;
+    background-image: -webkit-linear-gradient(45deg,#f35626,#feab3a);
+    -webkit-background-clip: padding-box;
+    /*-webkit-text-fill-color: transparent;*/
+    -webkit-animation: hue 6s infinite linear;
     }
 
     .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
