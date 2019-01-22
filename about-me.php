@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: test
+ * Template Name: Me?
  */
 
 get_header();
