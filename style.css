@@ -607,3 +607,7 @@ h1.cat-title:hover {
 		box-shadow: 4px 4px 12px #206dcca8;
     }
 }
+
+body {
+	background:url(https://cdn.defectink.com/images/Sensei_default.png) center center / cover no-repeat fixed;
+}

@@ -169,15 +169,13 @@ typing(document.getElementById('typing'));
 <script type="text/javascript"><?php echo akina_option('site_statistics'); ?></script>
 </div>
 <?php } ?>
-<!--
 <div class="changeSkin-gear no-select">
     <div class="keys">
         <span id="open-skinMenu">
-		<i class="iconfont icon-gear inline-block rotating"></i>&nbsp; 切换滤镜 | ( ╯▽╰) 
+		<i class="iconfont icon-gear inline-block rotating"></i>&nbsp; 切换背景 | Eromanga Sensei!!
         </span>
     </div>
 </div>
--->
 <div class="skin-menu no-select">
     <div class="theme-controls row-container">
         <ul class="menu-list">
@@ -194,13 +192,13 @@ typing(document.getElementById('typing'));
                 <i class="iconfont icon-dots"></i>
             </li><!--Dots-->
             <li id="totem-bg">
-                <i class="fa fa-superpowers" aria-hidden="true"></i>
+						<i class="iconfont icon-sakura"></i>
             </li><!--Orange-->
             <li id="pixiv-bg">
-                <i class="iconfont icon-pixiv"></i>
+                <i class="fa fa-heart"></i>
             </li><!--Start-->
             <li id="bing-bg">
-                <i class="iconfont icon-bing"></i>
+                <i class="fa fa-superpowers"></i>
             </li><!--Bing-->
             <li id="dark-bg">
                 <i class="fa fa-moon-o" aria-hidden="true"></i>
@@ -214,18 +212,14 @@ typing(document.getElementById('typing'));
                 onclick="mashiro_global.font_control.change_font()">Sans Serif</button>
     </div>
 </div>
-<!--/*蜂窝*/-->
-<script type="text/javascript">
-    if (screen && screen.width > 480) {
-        document.write('<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/canvas-nest.min.js" type="text/javascript"><\/script>');
-    }
-</script>
-<!-- 鼠标❤特效 -->
+
+<!-- 鼠标❤特效 
 <script type="text/javascript">
     if (screen && screen.width > 480) {
         document.write('<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/canvas-heart.min.js" type="text/javascript"><\/script>');
     }
 </script>
+-->
 <!-- 和泉纱雾 -->
 <canvas id="paul" width="255" height="455"></canvas>
 <script src="https://cdn.defectink.com/js/live2d.js"></script>
@@ -248,8 +242,7 @@ typing(document.getElementById('typing'));
 			if(t<=p){//下滚
 				$(".gizle").css("top","-101%");
 				$(".gizle").css("transition","all 1s");
-			}
-			
+			}	
 			else{//上滚
 				$(".gizle").css("top","0");
 				$(".gizle").css("transition","all .5s");
@@ -274,33 +267,5 @@ typing(document.getElementById('typing'));
 </div>
 <style>.skin-menu{left:auto;right:10px;}.changeSkin-gear{left:auto;right:5px;}</style>
 <?php endif; ?>
-<?php 
-if (akina_option('adobe_id_1', '')) {
-	$adobe = rand(0,2);
-	switch ($adobe) {
-		case 0:
-			$adobe_id = akina_option('adobe_id_1', '');
-			break;
-		case 1:
-			if (akina_option('adobe_id_2', '')) {
-				$adobe_id = akina_option('adobe_id_2', '');
-			} else {
-				$adobe_id = akina_option('adobe_id_1', '');
-			}
-			break;
-		default:
-			if (akina_option('adobe_id_3', '')) {
-				$adobe_id = akina_option('adobe_id_3', '');
-			} else {
-				$adobe_id = akina_option('adobe_id_1', '');
-			}
-	}
-	if(!wp_is_mobile()): 
-	?>
-	<script src="https://use.typekit.net/<?php echo $adobe_id; ?>.js"></script>
-	<script>try{Typekit.load({ async: true });}catch(e){}</script>
-	<?php 
-	endif;
-} ?>
 </body>
 </html>
