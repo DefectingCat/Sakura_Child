@@ -29,6 +29,7 @@ Theme by Mashiro
 <html <?php language_attributes(); ?>>
 <head>
 	<link href="<?php echo get_stylesheet_directory_uri() ?>/assets/stylesheets/index.bundle.css" rel="stylesheet">
+	<meta name="google-site-verification" content="qjdYZqmaCLs6uRakC8-NuvhuVNJb3RvTbkv0Xf82q9Y" />
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
@@ -116,7 +117,6 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
 					<?php header_user_menu(); if(akina_option('top_search') == 'yes') { ?>
 					<div class="searchbox"><i class="iconfont js-toggle-search iconsearch icon-search"></i></div>
 					<?php } ?>
-					<div class="lower-cantiner">
 						<div class="lower"><?php if(!akina_option('shownav')){ ?>
 						<div id="show-nav" class="showNav">
 							<div class="line line1"></div>
@@ -124,7 +124,6 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
 							<div class="line line3"></div>
 						</div><?php } ?>
 						<nav><?php wp_nav_menu( array( 'depth' => 2, 'theme_location' => 'primary', 'container' => false ) ); ?></nav><!-- #site-navigation -->
-					</div>
 					</div>
 				</div>
 			</header><!-- #masthead -->
