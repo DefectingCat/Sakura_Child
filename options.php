@@ -130,7 +130,7 @@ function optionsframework_options() {
         'name' => __("主题风格", 'akina'),
         'id' => 'theme_skin',
         'std' => "#FE9600",
-        'desc' => __('自定义主题颜色（此功能没有优化，建议使用#FE9600）', ''),
+        'desc' => __('自定义主题颜色（此功能优化过啦）', ''),
         'type' => "color"
 	);
 	
@@ -217,6 +217,12 @@ function optionsframework_options() {
 			'round' => __('圆形', ''),
 			'square' => __('方形', '')
 		));	
+    $options[] = array(
+		'name' => __('默认文章特色图', 'options_framework_theme'),
+		'desc' => __('在未设置文章特色图的情况下展示的默认图像，留空则调用本地随机封面（要展示的图片放入 /wp-content/themes/Sakura/feature/gallery/ 目录）', 'options_framework_theme'),
+		'id' => 'default_feature_image',
+		'std' => 'https://api.mashiro.top/feature/',
+		'type' => 'text');
 		
 	$options[] = array(
 		'name' => __('评论收缩', 'akina'),
@@ -496,6 +502,15 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __('文章页', 'options_framework_theme'),
 		'type' => 'heading');
+    $options[] = array(
+		'name' => __('文章样式', 'akina'),
+		'id' => 'entry_content_theme',
+		'std' => "sakura",
+		'type' => "radio",
+		'options' => array(
+			'sakura' => __('默认样式', ''),
+			'github' => __('GitHub 样式', ''),
+		));
 
 	$options[] = array(
 		'name' => __('文章点赞', 'akina'),
@@ -733,18 +748,18 @@ function optionsframework_options() {
 		'type' => 'text');  
         
     $options[] = array(
-		'name' => __('开启 jsDelivr 测试？', 'options_framework_theme'),
-		'desc' => __('如不清楚什么意思切勿勾选！', 'options_framework_theme'),
+		'name' => __('本地调用前端库（lib.js、lib.css）', 'options_framework_theme'),
+		'desc' => __('前端库不走 jsDelivr，不建议启用', 'options_framework_theme'),
 		'id' => 'jsdelivr_cdn_test',
 		'std' => '0',
 		'type' => 'checkbox');
 
     $options[] = array(
-		'name' => __('jsDelivr 版本号', 'options_framework_theme'),
-		'desc' => __('默认值为3.4.5', 'options_framework_theme'),
-		'id' => 'jsdelivr_cdn_version',
-		'std' => '3.4.5',
-		'type' => 'text');  
+		'name' => __('本地调用主题 js、css 文件（sakura-app.js、style.css）', 'options_framework_theme'),
+		'desc' => __('主题的 js、css 文件不走 jsDelivr，DIY 时请开启', 'options_framework_theme'),
+		'id' => 'app_no_jsdelivr_cdn',
+		'std' => '0',
+		'type' => 'checkbox'); 
         
     	//其他
 	$options[] = array(
@@ -753,10 +768,22 @@ function optionsframework_options() {
         
     $options[] = array(
     'name' => __('关于', 'options_framework_theme'),
-    'desc' => __('Theme Sakura v'.SAKURA_VERSION.'  |  <a href="https://2heng.xin/theme-sakura/">主题说明</a>  |  <a href="https://github.com/mashirozx/Sakura/">源码</a>', 'options_framework_theme'),
+    'desc' => __('Theme Sakura v'.SAKURA_VERSION.'  |  <a href="https://2heng.xin/theme-sakura/">主题说明</a>  |  <a href="https://github.com/mashirozx/Sakura/">源码</a><a href="https://github.com/mashirozx/Sakura/releases/latest"><img src="https://img.shields.io/github/release/mashirozx/Sakura.svg?style=flat-square" alt="GitHub release"></a>', 'options_framework_theme'),
     'id' => 'theme_intro',
     'std' => '',
     'type' => 'typography ');
+    
+    $options[] = array(
+		'name' => "检查更新",
+		'desc' => '<a href="https://github.com/mashirozx/Sakura/releases/latest">下载最新版</a>',
+		'id' => "release_info",
+		'std' => "tag",
+		'type' => "images",
+		'options' => array(
+			'tag' => 'https://img.shields.io/github/release/mashirozx/Sakura.svg?style=flat-square',
+            'tag2' => 'https://img.shields.io/github/commits-since/mashirozx/Sakura/v'.SAKURA_VERSION.'.svg?style=flat-square'
+        )
+	);
 
 	$options[] = array(
 		'name' => __('页脚悬浮播放器', 'options_framework_theme'),
@@ -766,8 +793,8 @@ function optionsframework_options() {
 		'type' => 'text');
         
 	$options[] = array(
-		'name' => __('Cookie 版本控制', 'options_framework_theme'),
-		'desc' => __('用于更新前端 cookie，可使用任意字符串，比如日期：---2018/5/16', 'options_framework_theme'),
+		'name' => __('版本控制', 'options_framework_theme'),
+		'desc' => __('用于更新前端 cookie 及浏览器缓存，可使用任意字符串', 'options_framework_theme'),
 		'id' => 'cookie_version',
 		'std' => '',
 		'type' => 'text');
@@ -813,12 +840,26 @@ function optionsframework_options() {
 		'id' => 'image_category',
 		'std' => '',
 		'type' => 'text');
-
+        
+    $options[] = array(
+		'name' => __('启用 baguetteBox', 'options_framework_theme'),
+		'desc' => __('默认禁用，<a href="https://github.com/mashirozx/Sakura/wiki/Fancybox">请阅读说明</a>', 'options_framework_theme'),
+		'id' => 'image_viewer',
+		'std' => '0',
+		'type' => 'checkbox');	
+        
+    $options[] = array(
+		'name' => __('是否开启剪贴板版权标识', 'options_framework_theme'),
+		'desc' => __('复制超过30个字节时自动向剪贴板添加版权标识，默认开启', 'options_framework_theme'),
+		'id' => 'clipboard_copyright',
+		'std' => '1',
+		'type' => 'checkbox');	
+        
 	$options[] = array(
 		'name' => __('发件地址前缀', 'options_framework_theme'),
-		'desc' => __('用于发送系统邮件，在用户的邮箱中显示的发件人地址，不要使用中文，默认系统邮件地址为 poi@你的域名.com', 'options_framework_theme'),
+		'desc' => __('用于发送系统邮件，在用户的邮箱中显示的发件人地址，不要使用中文，默认系统邮件地址为 bibi@你的域名', 'options_framework_theme'),
 		'id' => 'mail_user_name',
-		'std' => 'poi',
+		'std' => 'bibi',
 		'type' => 'text');
 
 	$options[] = array(
@@ -844,7 +885,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('开启多说插件支持', 'options_framework_theme'),
-		'desc' => __('如果使用多说插件，请勾选此项', 'options_framework_theme'),
+		'desc' => __('多说已经凉了', 'options_framework_theme'),
 		'id' => 'general_disqus_plugin_support',
 		'std' => '0',
 		'type' => 'checkbox');
