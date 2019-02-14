@@ -178,7 +178,7 @@ p {
 .entry-content ol li {
 	list-style: none;
 	position: relative;
-	padding: 0 0 0 2.1em;
+	padding: 0 0 0 1.6em !important;
 	margin: 0 0 0 10px;
 	text-shadow: 0px 0px 0px rgba(0,0,0,.1);
 	-webkit-transition: .12s;
