@@ -611,7 +611,18 @@ h1.cat-title:hover {
 		box-shadow: 4px 4px 12px #206dcca8;
     }
 }
-
+/* 默认背景 */
 body {
 	background:url(https://cdn.defectink.com/images/Sensei_default.png) center center / cover no-repeat fixed;
+}
+/* 图片简单处理 */
+img {
+	border-radius: 12px;
+	transition:all 0.5s;
+	-webkit-transition:all 0.5s;
+	-ms-transition:all 0.5s;
+}
+img:hover {
+	transform: scale(1.03);
+	box-shadow: 0 0 10px 0px #000000d1;
 }
