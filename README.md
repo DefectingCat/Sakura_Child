@@ -29,8 +29,11 @@
 
 虽然都不是什么大的改动，可能只会让大佬们的代码越来越烂。但自己还是很喜欢的呢。❤
 
-## 更多
-→[可能这次是真的改头换面了吧🍭](https://www.defectink.com/defect/290.html)
+~~## 更多
+→[可能这次是真的改头换面了吧🍭](https://www.defectink.com/defect/290.html)~~
 
-## Update
-决定不在这里写了呢 👉[可能这次是真的改头换面了吧🍭](https://www.defectink.com/defect/290.html)
+~~## Update
+决定不在这里写了呢 👉[可能这次是真的改头换面了吧🍭](https://www.defectink.com/defect/290.html)~~
+
+已经弃坑word press
+（逃ε=ε=ε=┏(゜ロ゜;)┛
